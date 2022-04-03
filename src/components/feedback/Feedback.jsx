@@ -16,4 +16,4 @@ export const Feedback = ({options, onLeaveFeedback}) => {
             </ul>
         </>
     )
-}
+}   
