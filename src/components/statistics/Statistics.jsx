@@ -1,7 +1,6 @@
 export const Statistics = ({good, neutral, bad, total, positivePercentage}) => {
     return (
         <>
-            Statistics....OK!
             <ul>
                 <li key='1'>good: {good}</li>
                 <li key='2'>neutral: {neutral}</li>

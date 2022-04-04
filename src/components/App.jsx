@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { Feedback } from './feedback/Feedback'
 import { Statistics } from './statistics/Statistics'
 import { Section } from './section/Section'
+import { Notification } from './notification/Notification'
 
 export default class App extends Component {
   state = {
@@ -29,14 +30,17 @@ export default class App extends Component {
   render() {
     const { good, neutral, bad, total, positivePercentage } = this.state
     const keys = Object.keys(this.state)
-    console.log(this.state);
     return (
       <>
         <Section title='Please leave a feedback'>
           <Feedback options={keys.filter(k => k !== 'total' && k !== 'positivePercentage')} onLeaveFeedback={this.onLeaveFeedback} />
         </Section>
-        <Section>
-        <Statistics good={good} neutral={neutral} bad={bad} total={total} positivePercentage={positivePercentage} />
+        <Section title='Statistics'>
+          {total ?
+            <Statistics good={good} neutral={neutral} bad={bad} total={total} positivePercentage={positivePercentage} />
+            :
+            <Notification message="There is no feedback"/>
+          }
         </Section>
         </>
     )
