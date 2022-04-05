@@ -6,7 +6,8 @@ list-style: none;
 display: flex;
 flex-direction: column;
 background-color: #eceff1;
-border-radius: .5rem
+border-radius: .5rem;
+width: 100%
 `;
 export const StatListItem = styled.li`
 margin: 0.5rem;
